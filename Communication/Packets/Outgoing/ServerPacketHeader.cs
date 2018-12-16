@@ -309,5 +309,13 @@
         public const int NavigatorSettingsMessageComposer = 2477;//3175
 
         public const int MessengerInitMessageComposer = 1329;//391
+
+        //Camera
+        public const int CameraCompetitionStatus = 3553; //3336
+        public const int CameraPrice = 388; //2707
+        public const int CameraPublishWaitMessage = 2867; //2292
+        public const int CameraPurchaseSuccesfull = 1103; //1658
+        public const int CameraRoomThumbnailSaved = 2664; //3287
+        public const int CameraURL = 311; //3018
     }
 }

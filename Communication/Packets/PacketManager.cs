@@ -52,6 +52,7 @@ using Plus.Communication.Packets.Incoming.GameCenter;
 using Plus.Communication.Packets.Incoming.Marketplace;
 using Plus.Communication.Packets.Incoming.Rooms.Furni.LoveLocks;
 using Plus.Communication.Packets.Incoming.Talents;
+using Plus.Communication.Packets.Incoming.Rooms.Camera;
 
 namespace Plus.Communication.Packets
 {
@@ -98,6 +99,7 @@ namespace Plus.Communication.Packets
 
             RegisterHandshake();
             RegisterLandingView();
+            RegisterCamera();
             RegisterCatalog();
             RegisterMarketplace();
             RegisterNavigator();
@@ -232,6 +234,14 @@ namespace Plus.Communication.Packets
         {
             _incomingPackets.Add(ClientPacketHeader.RefreshCampaignMessageEvent, new RefreshCampaignEvent());
             _incomingPackets.Add(ClientPacketHeader.GetPromoArticlesMessageEvent, new GetPromoArticlesEvent());
+        }
+
+        private void RegisterCamera()
+        {
+            _incomingPackets.Add(ClientPacketHeader.RequestCameraConfiguration, new RequestCameraConfigurationEvent());
+            _incomingPackets.Add(ClientPacketHeader.CameraRoomPicture, new CameraRoomPictureEvent());
+            _incomingPackets.Add(ClientPacketHeader.CameraPurchase, new CameraPurchaseEvent());
+            _incomingPackets.Add(ClientPacketHeader.CameraRoomThumbnail, new CameraRoomThumbnailEvent());
         }
 
         private void RegisterCatalog()
@@ -834,6 +844,10 @@ namespace Plus.Communication.Packets
             _packetNames.Add(ClientPacketHeader.GetPlayableGamesMessageEvent, "GetPlayableGamesEvent");
             _packetNames.Add(ClientPacketHeader.JoinPlayerQueueMessageEvent, "JoinPlayerQueueEvent");
             _packetNames.Add(ClientPacketHeader.Game2GetWeeklyLeaderboardMessageEvent, "Game2GetWeeklyLeaderboardEvent");
+            _packetNames.Add(ClientPacketHeader.RequestCameraConfiguration, "RequestCameraConfiguration");
+            _packetNames.Add(ClientPacketHeader.CameraRoomPicture, "CameraRoomPicture");
+            _packetNames.Add(ClientPacketHeader.CameraPurchase, "CameraPurchase");
+            _packetNames.Add(ClientPacketHeader.CameraRoomThumbnail, "CameraRoomThumbnail");
         }
     }
 }

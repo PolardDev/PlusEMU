@@ -25,6 +25,7 @@ using Plus.HabboHotel.Subscriptions;
 using System.Threading;
 using System.Threading.Tasks;
 using Plus.Core;
+using Plus.HabboHotel.Rooms.Camera;
 
 namespace Plus.HabboHotel
 {
@@ -52,6 +53,7 @@ namespace Plus.HabboHotel
         private readonly BadgeManager _badgeManager;
         private readonly PermissionManager _permissionManager;
         private readonly SubscriptionManager _subscriptionManager;
+        private readonly CameraManager _cameraManager;
 
         private bool _cycleEnded;
         private bool _cycleActive;
@@ -88,6 +90,9 @@ namespace Plus.HabboHotel
 
             _questManager = new QuestManager();
             _questManager.Init();
+
+            _cameraManager = new CameraManager();
+            _cameraManager.Init();
 
             _achievementManager = new AchievementManager();
             _achievementManager.Init();
@@ -258,6 +263,11 @@ namespace Plus.HabboHotel
         public BadgeManager GetBadgeManager()
         {
             return _badgeManager;
+        }
+
+        public CameraManager GetCameraManager()
+        {
+            return _cameraManager;
         }
     }
 }

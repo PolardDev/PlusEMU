@@ -22,6 +22,9 @@ ADD COLUMN `room_id`  int(11) NOT NULL AFTER `name`;
 
 SET FOREIGN_KEY_CHECKS=0;
 
+ALTER TABLE `rooms`
+ADD COLUMN `lay_enabled`  enum('0','1') NOT NULL DEFAULT '1' AFTER `spush_enabled`,
+ADD COLUMN `sale_price`  int(11) NOT NULL DEFAULT 0 AFTER `lay_enabled`;
 -- ----------------------------
 -- Table structure for `moderation_topic_actions`
 -- ----------------------------

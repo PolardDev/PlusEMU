@@ -59,6 +59,13 @@
         // Users
         public const int GetIgnoredUsersMessageEvent = 198;
 
+        // Camera
+        public const int RequestCameraConfiguration = 1132; //2850
+        public const int CameraPublishToWeb = 3665; //2933
+        public const int CameraPurchase = 71; //3221
+        public const int CameraRoomPicture = 2343; //1405
+        public const int CameraRoomThumbnail = 1184; //927
+
         // Moderation
         public const int OpenHelpToolMessageEvent = 1282;//1839
         public const int CallForHelpPendingCallsDeletedMessageEvent = 3643;

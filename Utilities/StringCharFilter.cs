@@ -29,5 +29,10 @@ namespace Plus.Utilities
 
             return str;
         }
+
+        public static string EscapeJSONString(string str)
+        {
+            return str.Replace("\"", "\\\"");
+        }
     }
 }

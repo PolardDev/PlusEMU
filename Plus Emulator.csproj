@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Plus</RootNamespace>
     <AssemblyName>Plus Emulator</AssemblyName>
-    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -77,6 +77,9 @@
     <Reference Include="AStar">
       <HintPath>Resources\libs\AStar.dll</HintPath>
     </Reference>
+    <Reference Include="CameraAPI">
+      <HintPath>..\api\CameraAPI\bin\Debug\CameraAPI.dll</HintPath>
+    </Reference>
     <Reference Include="Google.Protobuf, Version=3.5.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>packages\Google.Protobuf.3.5.1\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
@@ -92,6 +95,9 @@
     </Reference>
     <Reference Include="MySql.Data, Version=8.0.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>packages\MySql.Data.8.0.11\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel" />
@@ -237,6 +243,10 @@
     <Compile Include="Communication\Packets\Incoming\Navigator\NavigatorSearchEvent.cs" />
     <Compile Include="Communication\Packets\Incoming\Quests\GetDailyQuestEvent.cs" />
     <Compile Include="Communication\Packets\Incoming\Rooms\Action\RemoveMyRightsEvent.cs" />
+    <Compile Include="Communication\Packets\Incoming\Rooms\Camera\CameraPurchaseEvent.cs" />
+    <Compile Include="Communication\Packets\Incoming\Rooms\Camera\CameraRoomPictureEvent.cs" />
+    <Compile Include="Communication\Packets\Incoming\Rooms\Camera\CameraRoomThumbnailEvent.cs" />
+    <Compile Include="Communication\Packets\Incoming\Rooms\Camera\RequestCameraConfigurationEvent.cs" />
     <Compile Include="Communication\Packets\Incoming\Rooms\Furni\LoveLocks\ConfirmLoveLockEvent.cs" />
     <Compile Include="Communication\Packets\Incoming\Rooms\Furni\GetGroupFurniSettingsEvent.cs" />
     <Compile Include="Communication\Packets\Incoming\Rooms\Furni\UseSellableClothingEvent.cs" />
@@ -524,6 +534,10 @@
     <Compile Include="Communication\Packets\Outgoing\Rooms\Avatar\CarryObjectComposer.cs" />
     <Compile Include="Communication\Packets\Outgoing\Rooms\Avatar\DanceComposer.cs" />
     <Compile Include="Communication\Packets\Outgoing\Rooms\Avatar\SleepComposer.cs" />
+    <Compile Include="Communication\Packets\Outgoing\Rooms\Camera\CameraPriceComposer.cs" />
+    <Compile Include="Communication\Packets\Outgoing\Rooms\Camera\CameraPurchaseSuccesfullComposer.cs" />
+    <Compile Include="Communication\Packets\Outgoing\Rooms\Camera\CameraRoomThumbnailSavedComposer.cs" />
+    <Compile Include="Communication\Packets\Outgoing\Rooms\Camera\CameraURLComposer.cs" />
     <Compile Include="Communication\Packets\Outgoing\Rooms\Chat\ChatComposer.cs" />
     <Compile Include="Communication\Packets\Outgoing\Rooms\Chat\FloodControlComposer.cs" />
     <Compile Include="Communication\Packets\Outgoing\Rooms\Chat\ShoutComposer.cs" />
@@ -710,6 +724,7 @@
     <Compile Include="HabboHotel\Rewards\RewardTypeUtility.cs" />
     <Compile Include="HabboHotel\Rooms\AI\DatabaseUpdateState.cs" />
     <Compile Include="HabboHotel\Rooms\AI\Types\BartenderBot.cs" />
+    <Compile Include="HabboHotel\Rooms\Camera\CameraManager.cs" />
     <Compile Include="HabboHotel\Rooms\Chat\ChatManager.cs" />
     <Compile Include="HabboHotel\Rooms\Chat\Commands\Administrator\BubbleCommand.cs" />
     <Compile Include="HabboHotel\Rooms\Chat\Commands\Administrator\CarryCommand.cs" />
